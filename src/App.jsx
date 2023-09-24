@@ -1,18 +1,14 @@
 import React from 'react';
-import { createRoot } from 'react-dom';
-import Pet from './Pet';
+import { createRoot } from 'react-dom/client';
+import SearchParams from './SearchParams';
 
 const App = () => {
-          return (
-                    <div>
-                              <h1>Adobe Me!</h1>
-                              <Pet
-                                        animal={'Dog'}
-                                        name={'Luna'}
-                                        breed={'Havanese'}
-                              />
-                    </div>
-          );
+  return (
+    <div>
+      <h1>Adobe Me!</h1>
+      <SearchParams />
+    </div>
+  );
 };
 
 const container = document.getElementById('root');
