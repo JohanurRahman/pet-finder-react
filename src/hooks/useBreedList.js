@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
 const localCache = {};
 
@@ -8,7 +8,7 @@ export default function useBreedList(animal) {
 
   useEffect(() => {
     if (!animal) {
-      setBreedList([])
+      setBreedList([]);
     } else if (localCache[animal]) {
       setBreedList(localCache[animal]);
     } else {
