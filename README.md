@@ -8,24 +8,28 @@ A simple pet finder app built using React. It is designed to help users search f
 - Pet Adoption
 
 ## Technology used
-<img src="https://skillicons.dev/icons?i=react,js,html,css" />
+<img src="https://skillicons.dev/icons?i=react,js,html,css,vite" />
 
 ## App Preview
-![pet-finder](https://github.com/JohanurRahman/react-101/assets/42015613/29c4a0da-7838-4a9c-b6c7-35bff1e0d869) <hr>
-![2](https://github.com/JohanurRahman/react-101/assets/42015613/cb99e9ef-94b7-45ff-89f3-f19112b89881) <hr>
+![pet-finder-home](https://github.com/JohanurRahman/react-101/assets/42015613/29c4a0da-7838-4a9c-b6c7-35bff1e0d869) <hr>
+![pet-final-details](https://github.com/JohanurRahman/react-101/assets/42015613/cb99e9ef-94b7-45ff-89f3-f19112b89881) <hr>
 
 ## React Concepts
-- Pure React Components
-- ESLint & Prettier Setup
-- Vite Setup
-- JSX
-- Hooks
-- React Router
-- React Query
-- Class Components
-- Error Bounderies
-- Modals with Portals
-- Context
+Includes 2 branhces in the repo
+- React Intro
+   - Pure React Components
+   - ESLint & Prettier Setup
+   - Vite Setup
+   - JSX
+   - Hooks
+   - React Router
+   - React Query
+   - Class Components
+   - Error Bounderies
+   - Modals with Portals
+   - Context
+
+- Intermediate React
 
 ## Prerequisites
 
