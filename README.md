@@ -2,16 +2,19 @@
 
 A simple pet finder app built using React. It is designed to help users search for, read about, and potentially adopt adorable pets.
 
+## Features
+- Pet Search
+- Pet Listings
+- Pet Adoption
+
+## Technology used
+<img src="https://skillicons.dev/icons?i=react,js,html,css" />
+
 ## App Preview
 ![pet-finder](https://github.com/JohanurRahman/react-101/assets/42015613/29c4a0da-7838-4a9c-b6c7-35bff1e0d869) <hr>
 ![2](https://github.com/JohanurRahman/react-101/assets/42015613/cb99e9ef-94b7-45ff-89f3-f19112b89881) <hr>
 
-## Features
-- Pet Search
-- Pet Listings
-- Pet Adoption:
-
-## Concepts
+## React Concepts
 - Pure React Components
 - ESLint & Prettier Setup
 - Vite Setup
