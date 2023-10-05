@@ -1,4 +1,4 @@
-# React 101: A Quick Refresh (Pet Finder App)
+# Pet Finder App using React.js
 
 A simple pet finder app built using React. It is designed to help users search for, read about, and potentially adopt adorable pets.
 
