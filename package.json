@@ -3,17 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "type": "module",
   "scripts": {
     "dev": "vite",
-    "build:client": "vite build --outDir ../dist/client",
-    "build:server": "vite build --outDir ../dist/server --ssr ServerApp.jsx",
-    "build": "npm run build:client && npm run build:server",
+    "build": "vite build",
     "preview": "vite preview",
     "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\"",
     "lint": "eslint \"src/**/*.{js,jsx,ts,tsx}\" --quiet",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
@@ -31,7 +27,6 @@
   },
   "dependencies": {
     "@tanstack/react-query": "^4.10.1",
-    "express": "^4.18.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-router-dom": "^6.4.1"
