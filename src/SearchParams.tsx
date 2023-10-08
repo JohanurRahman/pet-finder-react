@@ -33,11 +33,8 @@ const SearchParams = () => {
   }
 
   return (
-    <div className="my-0 mx-auto w-11/12">
-      <form
-        className="p-10 mb-10 rounded-lg bg-gray-200 shadow-lg flex flex-col justify-center items-center"
-        onSubmit={(e) => handleSubmit(e)}
-      >
+    <div className="search-params">
+      <form onSubmit={(e) => handleSubmit(e)}>
         {adoptedPet ? (
           <div className="pet image-container">
             <img src={adoptedPet.images[0]} alt={adoptedPet.name} />
@@ -51,7 +48,6 @@ const SearchParams = () => {
             id="location"
             name="location"
             placeholder="Location"
-            className="search-input"
           />
         </label>
 
@@ -60,7 +56,6 @@ const SearchParams = () => {
           <select
             id="animal"
             value={animal}
-            className="search-input"
             onChange={(e) => {
               setAnimal(e.target.value);
             }}
@@ -74,24 +69,14 @@ const SearchParams = () => {
 
         <label htmlFor="breed">
           Breed
-          <select
-            id="breed"
-            name="breed"
-            className="search-input grayed-out-disabled"
-            disabled={breeds.length === 0}
-          >
+          <select id="breed" name="breed" disabled={breeds.length === 0}>
             <option />
             {breeds.map((breed) => (
               <option key={breed}>{breed}</option>
             ))}
           </select>
         </label>
-        <button
-          type="submit"
-          className="rounded px-6 py-2 text-white hover:opacity-50 border-none bg-orange-500"
-        >
-          Submit
-        </button>
+        <button type="submit">Submit</button>
       </form>
 
       {results.isLoading ? (
