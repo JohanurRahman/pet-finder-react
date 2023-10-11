@@ -1,12 +1,10 @@
 import { useNavigate, useParams } from 'react-router-dom';
-import { useQuery } from '@tanstack/react-query';
-import fetchPet from './fetchApi/fetchPet';
 import Carousel from './Carousel';
 import ErrorBoundary from './ErrorBoundary';
 import { lazy, useContext, useState } from 'react';
-import AdoptedPetContext from './AdoptedPetContext';
 import { useDispatch } from 'react-redux';
 import { adopt } from './adoptedPetSlice';
+import { useGetPetQuery } from './petApiService';
 
 const Modal = lazy(() => import('./Modal'));
 
@@ -19,13 +17,11 @@ const Details = () => {
     throw new Error('no id provided to details');
   }
 
-  const results = useQuery(['details', id], fetchPet);
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  // const [_, setAdoptedPet] = useContext(AdoptedPetContext);
+  const { isLoading, data: pet } = useGetPetQuery(id);
 
   const dispatch = useDispatch();
 
-  if (results.isLoading) {
+  if (isLoading) {
     return (
       <div className="loading-pane">
         <h2 className="loader">🌀</h2>
@@ -33,7 +29,6 @@ const Details = () => {
     );
   }
 
-  const pet = results?.data?.pets[0];
   if (!pet) {
     throw new Error('pet not found');
   }

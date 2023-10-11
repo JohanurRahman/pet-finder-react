@@ -6,6 +6,7 @@ import { useQuery } from '@tanstack/react-query';
 import { Animal, Pet } from './APIResponsesTypes';
 import { useDispatch, useSelector } from 'react-redux';
 import { all } from './searchParamsSlice';
+import { useSearchQuery } from './petApiService';
 
 const ANIMALS: Animal[] = ['bird', 'cat', 'dog', 'rabbit', 'reptile'];
 
@@ -16,10 +17,10 @@ const SearchParams = () => {
   const adoptedPet = useSelector(
     (state: { adoptedPet: { value: Pet } }) => state.adoptedPet.value
   );
-  const searchParams = useSelector((state) => state.searchParams.value);
+  const searchParams = useSelector((state: any) => state.searchParams.value);
 
-  const results = useQuery(['search', searchParams], fetchSearch);
-  const pets = results?.data?.pets ?? [];
+  let { isLoading, data: pets } = useSearchQuery(searchParams);
+  pets = pets ?? [];
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -82,7 +83,7 @@ const SearchParams = () => {
         <button type="submit">Submit</button>
       </form>
 
-      {results.isLoading ? (
+      {isLoading ? (
         <div className="loading-pane">
           <h2 className="loader">🌀</h2>
         </div>
