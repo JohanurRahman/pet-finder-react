@@ -5,6 +5,8 @@ import Carousel from './Carousel';
 import ErrorBoundary from './ErrorBoundary';
 import { lazy, useContext, useState } from 'react';
 import AdoptedPetContext from './AdoptedPetContext';
+import { useDispatch } from 'react-redux';
+import { adopt } from './adoptedPetSlice';
 
 const Modal = lazy(() => import('./Modal'));
 
@@ -19,7 +21,9 @@ const Details = () => {
 
   const results = useQuery(['details', id], fetchPet);
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [_, setAdoptedPet] = useContext(AdoptedPetContext);
+  // const [_, setAdoptedPet] = useContext(AdoptedPetContext);
+
+  const dispatch = useDispatch();
 
   if (results.isLoading) {
     return (
@@ -50,7 +54,7 @@ const Details = () => {
                 <div className="buttons">
                   <button
                     onClick={() => {
-                      setAdoptedPet(pet);
+                      dispatch(adopt(pet));
                       navigate('/');
                     }}
                   >
