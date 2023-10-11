@@ -21,15 +21,23 @@ const App = () => {
   return (
     <BrowserRouter>
       <QueryClientProvider client={queryClient}>
-        <AdoptedPetContext.Provider value={adoptedPet}>
-          <header>
-            <Link to="/">Adobe Me!</Link>
-          </header>
-          <Routes>
-            <Route path="/details/:id" element={<Details />}></Route>
-            <Route path="/" element={<SearchParams />}></Route>
-          </Routes>
-        </AdoptedPetContext.Provider>
+        <Suspense
+          fallback={
+            <div className="loading-pane">
+              <h2 className="loader">🌀</h2>
+            </div>
+          }
+        >
+          <AdoptedPetContext.Provider value={adoptedPet}>
+            <header>
+              <Link to="/">Adobe Me!</Link>
+            </header>
+            <Routes>
+              <Route path="/details/:id" element={<Details />}></Route>
+              <Route path="/" element={<SearchParams />}></Route>
+            </Routes>
+          </AdoptedPetContext.Provider>
+        </Suspense>
       </QueryClientProvider>
     </BrowserRouter>
   );
