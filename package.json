@@ -11,6 +11,7 @@
     "format:check": "prettier --check \"src/**/*.{js,jsx,ts,tsx}\"",
     "lint": "eslint \"src/**/*.{js,jsx,ts,tsx}\" --quiet",
     "test": "vitest",
+    "test:coverage": "vitest --coverage",
     "typecheck": "tsc --noEmit"
   },
   "keywords": [],
@@ -23,6 +24,7 @@
     "@typescript-eslint/eslint-plugin": "5.40.1",
     "@typescript-eslint/parser": "5.40.1",
     "@vitejs/plugin-react": "2.1.0",
+    "@vitest/coverage-c8": "0.24.3",
     "eslint": "8.24.0",
     "eslint-config-prettier": "8.5.0",
     "eslint-import-resolver-typescript": "3.5.1",
